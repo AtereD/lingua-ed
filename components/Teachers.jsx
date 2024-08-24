@@ -15,7 +15,7 @@ const teachersData = [
   { name: 'Sandra Wilson', imgUrl: '/assets/spanish-teacher.png', flag: '/assets/spanish.png', subject: 'Spanish teacher' },
   { name: 'Jimmy Cooper', imgUrl: '/assets/english-teacher.png', flag: '/assets/English.png', subject: 'English teacher' },
   { name: 'Eun-Ji', imgUrl: '/assets/korea-teacher.jpg', flag: '/assets/south-Korea.png', subject: 'Korean teacher' },
-  { name: 'Benedict Eitel', imgUrl: '/assets/german-teacher.jpg', flag: '/assets/germany.png', subject: 'German teacher' }
+  { name: 'Benedict Eitel', imgUrl: '/assets/english-teacher.png', flag: '/assets/germany.png', subject: 'German teacher' }
 ];
 
 const Teachers = () => {
@@ -76,7 +76,7 @@ const Teachers = () => {
           <div className={`grid ${itemsPerPage === 1 ? 'grid-cols-1' : 'grid-cols-1 lg:grid-cols-3'} gap-5 justify-items-center`}>
             {currentTeachers.map((teacher, index) => (
               <div key={index} className="flex flex-col gap-3 p-2">
-                <Image src={teacher.imgUrl} width={606} height={457} alt={`${teacher.name}'s image`} className={` lg:h-[390px] md:w-[500px] h-[400px] rounded-3xl md:h-[500px]`} />
+                <Image src={teacher.imgUrl} width={606} height={457} alt={`${teacher.name}'s image`} className={` lg:h-[350px] md:w-[350px] h-[400px] rounded-3xl md:h-[380px] w-[360px] 2xl:w-[380px] 2xl:h-[400px]`} />
                 <div className="flex flex-col gap-3">
                   <h3 className="text-[20px] text-[#222] font-medium">{teacher.name}</h3>
                   <div className="flex items-center gap-1">
