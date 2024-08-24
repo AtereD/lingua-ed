@@ -20,14 +20,14 @@ const testimonialsData = [
     imageURL: "/assets/spanish-teacher.png",
     name: " Jane Doe",
     course: "B3 course student",
-    logo: "/assets/english.png",
+    logo: "/assets/English.png",
     review: "There is no way I could have made the same progress learning English without using Lingua. The best part is now learning English has become one of my biggest hobbies.",
   },
   {
-    imageURL: "/assets/italian-teacher.png",
+    imageURL: "/assets/english-teacher.png",
     name: "Dragos Gontralu",
     course: "A1 course student",
-    logo: "/assets/italy.png",
+    logo: "/assets/Italy.png",
     review: "There is no way I could have made the same progress learning the Italian language without using Lingua. The best part is now learning Italian language has become one of my biggest hobbies.",
   },
   // Add more testimonials here
@@ -54,7 +54,7 @@ const Students = () => {
             </h2>
           </div>
           <div className="flex flex-col items-center justify-center lg:flex-row gap-7 lg:justify-start ">
-            <Image src= {testimonialsData[currentIndex].imageURL} width={450} height={400} alt="Student's Image" className={` w-[95px] h-[100px] md:w-[450px] flex item-center rounded-full md:h-[480px] md:flex-none md:rounded-[50px]`}/>
+            <Image src= {testimonialsData[currentIndex].imageURL} width={450} height={400} alt="Student's Image" className={` w-[95px] h-[100px] md:w-[350px] flex item-center rounded-full md:h-[400px] md:flex-none md:rounded-[50px]`}/>
             <div className='flex flex-col items-center gap-2 md:items-start'>
               <h3 className={`${quicksand.className} font-semibold text-[24px] md:text-[28px] text-[#222]`}> {testimonialsData[currentIndex].name}</h3>
               <div className='flex items-center gap-1'>
@@ -72,7 +72,6 @@ const Students = () => {
                 ))}
               </div>
             </div>
-            
           </div>
         </div>
       </div>
