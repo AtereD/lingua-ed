@@ -35,10 +35,11 @@ const Hero = ({ }) => {
           <div className="flex items-center justify-center w-full lg:w-1/2">
             <div className="relative">
               <Image
-                src={"/assets/base.png"}
+                src={"/assets/Base.png"}
                 width={450}
                 height={450}
                 alt="Base image"
+                className='w-[400px] md:w-[450px] md:h-[450px]'
               />
               <div className="absolute top-0 left-0">
                 <Image
@@ -46,6 +47,7 @@ const Hero = ({ }) => {
                   width={450}
                   height={450}
                   alt="Image-container"
+                  className='w-[350px] md:w-[450px] md:h-[450px]'
                 />
                 <div className="absolute flex items-center md:gap-4 md:h-[70px] md:w-[220px] md:top-[55px] bg-white rounded-3xl px-3 py-3 md:py-5 md:left-[-55px] top-[30px] gap-2 left-[-9px] w-[180px] h-[60px]">
                   <Image
