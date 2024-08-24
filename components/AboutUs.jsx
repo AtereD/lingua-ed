@@ -37,7 +37,7 @@ const AboutUs = () => {
                 </div>
                
                 <div className=' lg:w-1/2'>
-                    <div className='flex items-center justify-center bg-[#fff5f1] rounded-3xl w-[400px] md:w-[500px] lg:w-[600px]'>
+                    <div className='flex items-center justify-center bg-[#fff5f1] rounded-3xl '>
                     <Image src={"/assets/about3.jpg"} width={550} height={550} alt='About-image' className='rounded-3xl w-[350px] md:w-[450px] lg:w-[550px] '/></div>
                 </div>
             </div>
@@ -53,8 +53,7 @@ const AboutUs = () => {
                 <li className='text-[#222] font-medium'>Community and Support &#58; Join a vibrant community of language learners from around the world. Participate in forums, group activities, and cultural exchanges to enhance your learning experience and connect with fellow learners.
                 </li>
                 </ul>
-            </div>
-            
+            </div>   
         </div>
         </div>
       </div>
