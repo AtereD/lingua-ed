@@ -13,13 +13,13 @@ const Nav = () => {
           <Image src={"/logo.png"} width={110} height={35} alt="Logo"/>
         </div>
         <div>
-          <ul className="text-[#666680] flex items-center gap-6 transition-colors">
-            <li className='duration-300 hover:scale-95 text-[14px] xl:text-[18px] '><a href="/">
+          <ul className="text-[#666680] flex items-center gap-6 transition-colors font-medium">
+          <li className='duration-300 hover:scale-95 text-[14px] xl:text-[18px] '><a href="/">
+              Home</a></li>
+            <li className='duration-300 hover:scale-95 text-[14px] xl:text-[18px] '><a href="/courses">
               Courses</a></li>
-              <li className='duration-300 hover:scale-95 text-[14px] xl:text-[18px] '><a href="#about">
+              <li className='duration-300 hover:scale-95 text-[14px] xl:text-[18px] '><a href="/about-us">
               About us</a></li>
-              <li className='duration-300 hover:scale-95 text-[14px] xl:text-[18px] '><a href="#teachers">
-              Teachers</a></li>
               <li className='duration-300 hover:scale-95 text-[14px] xl:text-[18px] '><a href="#pricing">
               Pricing</a></li>
               <li className='duration-300 hover:scale-95 text-[14px] xl:text-[18px] '><a href="/">

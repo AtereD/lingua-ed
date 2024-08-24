@@ -47,14 +47,14 @@ const MobileNav = () => {
             <div className='flex flex-col items-center gap-6'>
               <div>
                 <ul className="text-[#666680] flex items-center gap-3 transition-colors flex-col md:gap-5">
-                  <li className="text-[14px] hover:scale-95 duration-300 ">
-                    <a href="/">Courses</a>
+                <li className="text-[14px] hover:scale-95 duration-300 ">
+                    <a href="/">Home</a>
                   </li>
                   <li className="text-[14px] hover:scale-95 duration-300 ">
-                    <a href="#about">About us</a>
+                    <a href="/courses">Courses</a>
                   </li>
                   <li className="text-[14px] hover:scale-95 duration-300 ">
-                    <a href="#teachers">Teachers</a>
+                    <a href="/about-us">About us</a>
                   </li>
                   <li className="text-[14px] hover:scale-95 duration-300 ">
                     <a href="#pricing">Pricing</a>

@@ -11,11 +11,11 @@ const quicksand = Quicksand({
 });
 
 const teachersData = [
-  { name: 'Christian Howard', imgUrl: '/assets/italian-teacher.png', flag: '/assets/italy.png', subject: 'Italian teacher' },
+  { name: 'Christian Howard', imgUrl: '/assets/italian-teacher.png', flag: '/assets/Italy.png', subject: 'Italian teacher' },
   { name: 'Sandra Wilson', imgUrl: '/assets/spanish-teacher.png', flag: '/assets/spanish.png', subject: 'Spanish teacher' },
-  { name: 'Jimmy Cooper', imgUrl: '/assets/english-teacher.png', flag: '/assets/english.png', subject: 'English teacher' },
-  { name: 'Elise Gabriel', imgUrl: '/assets/italian-teacher.png', flag: '/assets/french.png', subject: 'French teacher' },
-  { name: 'Ahaan Bakshi', imgUrl: '/assets/spanish-teacher.png', flag: '/assets/india.png', subject: 'Indian teacher' }
+  { name: 'Jimmy Cooper', imgUrl: '/assets/english-teacher.png', flag: '/assets/English.png', subject: 'English teacher' },
+  { name: 'Elise Gabriel', imgUrl: '/assets/italian-teacher.png', flag: '/assets/French.png', subject: 'French teacher' },
+  { name: 'Ahaan Bakshi', imgUrl: '/assets/spanish-teacher.png', flag: '/assets/India.png', subject: 'Indian teacher' }
 ];
 
 const Teachers = () => {

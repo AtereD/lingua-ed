@@ -64,13 +64,13 @@ const Hero = ({ }) => {
                     <p className="md:text-[10px] text-[8px]">I loved the italian course!</p>
                   </div>
                 </div>
-                <div className="absolute md:right-[-80px] md:w-[150px] flex p-5 bg-white rounded-3xl flex-col text-center justify-center top-[100px] right-[-25px] w-[120px] h-[55px]">
+                <div className="absolute md:right-[-80px] md:w-[150px] flex p-5 bg-white rounded-3xl flex-col text-center justify-center top-[100px] md:top-[180px] right-[-15px] w-[120px] h-[55px] md:h-auto">
                     <div className="text-[#524fd5] font-semibold md:text-[14px] text-[10px]">
                   <CountUp end={'10'} delay={0} duration={3} />+ Courses</div>
                   
                   <p className="md:text-[10px] text-[8px]">Multiple Categories</p>
                 </div>
-                <div className="absolute flex flex-col  justify-center bg-white rounded-3xl md:top-[80%] left-[25%] top-[90%] items-center ">
+                <div className="absolute flex flex-col  justify-center bg-white rounded-3xl md:top-[85%] left-[25%] top-[85%] items-center ">
                   <div className="flex flex-col items-center w-full p-2">
                     <Image
                       src={"/assets/Images.png"}
