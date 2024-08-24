@@ -41,7 +41,7 @@ const Students = () => {
   }
   return (
     <section className="px-1 py-24 md:px-5 lg:px-14">
-      <div className="container mx-auto">
+      <div className="container px-3 mx-auto ">
         <div className="flex flex-col gap-10">
           <div className="flex flex-col gap-2">
             <h3 className="uppercase text-[16px] md:text-[18px] text-[#b0b0c0] font-medium">

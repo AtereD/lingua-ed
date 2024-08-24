@@ -10,7 +10,7 @@ const quicksand = Quicksand({
 const WhyChooseUs = () => {
   return (
     <section className={`px-1 md:px-5 lg:px-14 py-24`}>
-      <div className='container mx-auto'>
+      <div className='container px-3 mx-auto'>
         <div className='flex flex-col gap-24'>
           <div className='flex flex-col gap-3 text-center'>
             <h3 className='uppercase text-[16px] md:text-[18px] text-[#b0b0c0] font-medium'>why choose us</h3>

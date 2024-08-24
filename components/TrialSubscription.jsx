@@ -17,7 +17,7 @@ const TrialSubscription = () => {
   
   return (
     <section className={`px-1z py-24 md:px-5 lg:px-14 ${quicksand.className}`}>
-      <div className='container mx-auto'>
+      <div className='container px-3 mx-auto'>
         <div className='flex flex-col items-center justify-center text-center '>
             <h2
               className={`${quicksand.className} text-[#222] text-4xl font-medium md:text-5xl pb-5`}

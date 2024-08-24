@@ -11,7 +11,7 @@ const quicksand = Quicksand({
 const Footer = () => {
   return (
     <footer className={`px-1 py-24 md:px-5 lg:px-14 bg-[#f8fafe] rounded-3xl`}>
-      <div className='container mx-auto'>
+      <div className='container px-3 mx-auto'>
         <div className='flex flex-col items-center justify-center gap-10 lg:flex-row lg:gap-28'>
           <div className='flex flex-col items-center gap-5 text-center lg:text-left lg:items-start'>
             <Image src={"/footer-logo.png"} width={110} height={35} alt="Lingua Logo"/>
