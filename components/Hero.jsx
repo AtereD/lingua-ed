@@ -26,9 +26,10 @@ const Hero = ({ }) => {
               <br className="hidden lg:block" /> access on mobile and desktop
             </p>
             <div>
+              <a href='/pricing'>
               <button className="bg-[#524fd5] w-[171px] h-[64px] text-white flex items-center text-center justify-center rounded-full font-medium hover:scale-95 duration-300 ease-in-out hover:transition-colors py-6 px-6">
                 Get started
-              </button>
+              </button></a>
             </div>
           </div>
 

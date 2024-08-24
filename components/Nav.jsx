@@ -28,9 +28,9 @@ const Nav = () => {
               Blog</a></li>
           </ul>
         </div>
-        
+          <a href='/pricing'>
           <button className='text-[#524fd5] w-[148px] h-[52px] bg-white flex items-center text-center justify-center rounded-full font-medium hover:scale-95 duration-300 ease-in-out hover:transition-colors'>Get started</button>
-        
+          </a>
       </div>
       
       {/* Mobile */}

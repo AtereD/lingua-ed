@@ -18,9 +18,10 @@ const MobileNav = () => {
           <Image src={"/logo.png"} width={90} height={35} alt="Logo" />
         </div>
         <div className="text-[#666680] flex items-center gap-4">
+          <a href='/pricing'>
           <button className="text-[#524fd5] w-[128px] h-[40px] bg-white flex items-center text-center justify-center rounded-full font-medium hover:scale-95 duration-300 ease-in-out hover:transition-colors">
             Get started
-          </button>
+          </button></a>
           <FaBars className="w-5 h-5" onClick={handleNav} />
         </div>
       </div>
