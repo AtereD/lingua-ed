@@ -12,10 +12,10 @@ const Pricing = () => {
              </h3>
         </div>
       </div>
-      <div className="container flex flex-col items-center justify-center gap-10 px-3 mx-auto ">
+      <div className="container flex flex-col items-center justify-center w-full gap-10 px-3 mx-auto ">
         <p className='text-[#222] text-center text-2xl md:text-3xl lg:text-[4xl] py-5 lg:max-w-[500px] leading-[25px] tracking-normal'>Choose the plan that best fits your needs and start your learning journey today!</p>
-        <div className="grid w-full grid-cols-1 gap-10 pb-5 lg:grid-cols-2 xl:grid-cols-3 justify-items-center lg:gap-14 ">
-            <div className='p-4  flex flex-col items-center justify-center border border-[#524fd5]  rounded-[50px] gap-10 md:w-[400px] w-[350px]'>
+        <div className="grid w-full grid-cols-1 gap-10 px-4 pb-5 lg:grid-cols-2 xl:grid-cols-3 justify-items-center lg:gap-14">
+            <div className='p-4  flex flex-col items-center justify-center border border-[#524fd5]  rounded-[50px] gap-10 md:w-[400px] w-[300px]'>
                 <div className='text-center text-[#222] flex flex-col gap-4 w-full'>
                     <h4 className='text-2xl font-medium'>Basic Plan</h4>
                     <p className='text-xl'>$19/month</p>
@@ -32,7 +32,7 @@ const Pricing = () => {
                 <button className='bg-[#524fd5] w-[148px] h-[52px] text-white flex items-center text-center justify-center rounded-full font-medium hover:scale-95 duration-300 ease-in-out hover:transition-colors'>Sign Up Now</button>
                 </div>
             </div>
-            <div className='p-4  flex flex-col items-center justify-center border border-[#524fd5]  rounded-[50px] gap-10 md:w-[400px] w-[350px]'>
+            <div className='p-4  flex flex-col items-center justify-center border border-[#524fd5]  rounded-[50px] gap-10 md:w-[400px] w-[300px]'>
                 <div className='text-center text-[#222] flex flex-col gap-4 w-full'>
                     <h4 className='text-2xl font-medium'>Standard Plan</h4>
                     <p className='text-xl'>$49/month</p>
@@ -50,7 +50,7 @@ const Pricing = () => {
                 <button className='bg-[#524fd5] w-[148px] h-[52px] text-white flex items-center text-center justify-center rounded-full font-medium hover:scale-95 duration-300 ease-in-out hover:transition-colors'>Sign Up Now</button>
                 </div>
             </div>
-            <div className='p-5 flex flex-col items-center justify-center border border-[#524fd5]  rounded-[50px] gap-10 md:w-[400px] w-[350px]'>
+            <div className='p-5 flex flex-col items-center justify-center border border-[#524fd5]  rounded-[50px] gap-10 md:w-[400px] w-[300px]'>
                 <div className='text-center text-[#222] flex flex-col gap-4 w-full'>
                     <h4 className='text-2xl font-medium'>Premium Plan</h4>
                     <p className='text-xl'>$99/month</p>
