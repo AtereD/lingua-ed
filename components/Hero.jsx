@@ -33,7 +33,7 @@ const Hero = ({ }) => {
           </div>
 
           <div className="flex items-center justify-center w-full lg:w-1/2">
-            <div className="relative">
+            <div className="relative ">
               <Image
                 src={"/assets/Base.png"}
                 width={450}
@@ -49,25 +49,26 @@ const Hero = ({ }) => {
                   alt="Image-container"
                   className='w-[350px] md:w-[450px] md:h-[450px]'
                 />
-                <div className="absolute flex items-center md:gap-4 md:h-[70px] md:w-[220px] md:top-[55px] bg-white rounded-3xl px-3 py-3 md:py-5 md:left-[-55px] top-[30px] gap-2 left-[-9px] w-[180px] h-[60px]">
+                <div className="absolute flex items-center md:gap-4 md:h-[70px] md:w-[200px] md:top-[55px] bg-white rounded-3xl px-2 md:py-5 md:left-[-45px] top-[30px] gap-1 left-[-25px] w-[150px] h-[55px] justify-center">
                   <Image
                     src={"/assets/Avatar.png"}
                     width={48}
                     height={48}
                     alt="Avatar"
+                    className='md:w-[48px] md:h-[48px] w-[30px] h-[30px]'
                   />
                   <div className="flex flex-col gap-1">
-                    <p className="text-[#222] md:text-[14px] text-[12px]">
+                    <p className="text-[#222] md:text-[14px] text-[10px] font-semibold ">
                       Jane Cooper
                     </p>
-                    <p className="text-[10px]">I loved the italian course!</p>
+                    <p className="md:text-[10px] text-[8px]">I loved the italian course!</p>
                   </div>
                 </div>
-                <div className="absolute md:right-[-100px] md:w-[180px] flex p-5 bg-white rounded-3xl flex-col text-center justify-center top-[140px] right-[-10px]">
-                    <div className="text-[#524fd5] font-semibold text-[14px]">
+                <div className="absolute md:right-[-80px] md:w-[150px] flex p-5 bg-white rounded-3xl flex-col text-center justify-center top-[100px] right-[-40px] w-[120px] h-[55px]">
+                    <div className="text-[#524fd5] font-semibold md:text-[14px] text-[10px]">
                   <CountUp end={'10'} delay={0} duration={3} />+ Courses</div>
                   
-                  <p className="text-[10px]">Multiple Categories</p>
+                  <p className="md:text-[10px] text-[8px]">Multiple Categories</p>
                 </div>
                 <div className="absolute flex flex-col  justify-center bg-white rounded-3xl md:top-[80%] left-[25%] top-[80%] items-center ">
                   <div className="flex flex-col items-center w-full p-2">
@@ -76,9 +77,9 @@ const Hero = ({ }) => {
                       width={180}
                       height={56}
                       alt="Image"
-                      className='w-[150px] md:[180px]'
+                      className='w-[100px] md:[180px]'
                     />
-                    <p className="text-[10px]">Dedicated students per day</p>
+                    <p className="md:text-[10px] text-[8px]">Dedicated students per day</p>
                   </div>
                   
                 </div>
