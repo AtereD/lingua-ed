@@ -20,11 +20,11 @@ const Nav = () => {
               Courses</a></li>
               <li className='duration-300 hover:scale-95 text-[14px] xl:text-[18px] '><a href="/about-us">
               About us</a></li>
-              <li className='duration-300 hover:scale-95 text-[14px] xl:text-[18px] '><a href="#pricing">
+              <li className='duration-300 hover:scale-95 text-[14px] xl:text-[18px] '><a href="/pricing">
               Pricing</a></li>
-              <li className='duration-300 hover:scale-95 text-[14px] xl:text-[18px] '><a href="/">
+              <li className='duration-300 hover:scale-95 text-[14px] xl:text-[18px] '><a href="/careers">
               Careers</a></li>
-              <li className='duration-300 hover:scale-95 text-[14px] xl:text-[18px] '><a href="/">
+              <li className='duration-300 hover:scale-95 text-[14px] xl:text-[18px] '><a href="/blogs">
               Blog</a></li>
           </ul>
         </div>

@@ -28,7 +28,7 @@ const AboutUs = () => {
                     <div className='flex items-center justify-center bg-[#fff5f1] rounded-3xl  '>
                     <Image src={"/assets/about1.jpg"} width={550} height={550} alt='About-image' className='rounded-3xl w-[350px] md:w-[450px] lg:w-[550px] '/></div>
                 </div>
-                <p className='font-medium text-center text-[18px]  lg:w-1/2 lg:text-left'>At Lingua, we believe that language learning is more than just acquiring a new skill; it&#44;s about opening doors to new experiences, fostering cross-cultural connections, and broadening horizons. Our mission is to make language education accessible, engaging, and effective for learners of all ages and backgrounds.</p>
+                <p className='font-medium text-center text-[18px]  lg:w-1/2 lg:text-left'>At Lingua, we believe that language learning is more than just acquiring a new skill; it&#39;s about opening doors to new experiences, fostering cross-cultural connections, and broadening horizons. Our mission is to make language education accessible, engaging, and effective for learners of all ages and backgrounds.</p>
             </div>
             <div className='flex flex-col items-center w-full gap-5 lg:flex-row '>
                 <div className='flex flex-col w-full gap-3 lg:w-1/2'>

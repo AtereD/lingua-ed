@@ -57,13 +57,13 @@ const MobileNav = () => {
                     <a href="/about-us">About us</a>
                   </li>
                   <li className="text-[14px] hover:scale-95 duration-300 ">
-                    <a href="#pricing">Pricing</a>
+                    <a href="/pricing">Pricing</a>
                   </li>
                   <li className="text-[14px] hover:scale-95 duration-300 ">
-                    <a href="/">Careers</a>
+                    <a href="/careers">Careers</a>
                   </li>
                   <li className="text-[14px] hover:scale-95 duration-300 ">
-                    <a href="/">Blog</a>
+                    <a href="/blogs">Blog</a>
                   </li>
                 </ul>
               </div>
