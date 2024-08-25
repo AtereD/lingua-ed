@@ -21,14 +21,14 @@ const testimonialsData = [
     name: " Jane Doe",
     course: "B3 course student",
     logo: "/assets/English.png",
-    review: "There is no way I could have made the same progress learning English without using Lingua. The best part is now learning English has become one of my biggest hobbies.",
+    review: "Thanks to Lingua, my journey in learning English has been incredibly rewarding. The platform has transformed what started as a casual interest into one of my greatest passions. I can&#39;t imagine making such strides without it!",
   },
   {
     imageURL: "/assets/english-teacher.png",
     name: "Dragos Gontralu",
     course: "A1 course student",
     logo: "/assets/Italy.png",
-    review: "There is no way I could have made the same progress learning the Italian language without using Lingua. The best part is now learning Italian language has become one of my biggest hobbies.",
+    review: "Lingua has been a game-changer for my Italian learning experience. What began as a simple goal has evolved into one of my favorite pastimes, all thanks to the progress I've made with this amazing skill.",
   },
   // Add more testimonials here
 ]

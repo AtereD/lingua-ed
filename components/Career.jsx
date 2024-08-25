@@ -41,7 +41,7 @@ const jobListings = [
 const Career = () => {
   return (
     <div>
-        <div className="px-3 bg-[#fff5f1] rounded-3xl">
+        <div className="px-1 bg-[#fff5f1] rounded-3xl">
         <Nav />
         <header className="items-center justify-center hidden gap-1 pb-5 lg:flex lg:flex-col">
         <h3 className="text-[#222] text-4xl md:text-5xl pt-10 font-medium">

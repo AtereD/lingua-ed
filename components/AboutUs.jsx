@@ -5,7 +5,7 @@ import Image from "next/image";
 const AboutUs = () => {
   return (
     <div>
-      <div className="px-3 bg-[#fff5f1] rounded-3xl">
+      <div className="px-1 bg-[#fff5f1] rounded-3xl">
         <Nav />
         <div className='items-center justify-center hidden gap-1 lg:flex-col lg:flex'>
             <h3 className="text-[#222] text-4xl md:text-5xl pt-10 font-medium ">

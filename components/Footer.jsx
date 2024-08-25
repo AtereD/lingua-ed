@@ -24,8 +24,8 @@ const Footer = () => {
             <div className='flex flex-col gap-5 text-center lg:text-left'>
               <h3 className='text-[#222] font-semibold'>Company</h3>
               <div className='flex flex-col gap-2 font-medium'>
-                <a href='/' className='hover:text-[#424250]'>Careers</a>
-                <a href='/' className='hover:text-[#424250]'>Teachers</a>
+                <a href='/careers' className='hover:text-[#424250]'>Careers</a>
+                <a href='/#teachers' className='hover:text-[#424250]'>Teachers</a>
                 <a href='/' className='hover:text-[#424250]'>Support</a>
                 <a href='/' className='hover:text-[#424250]'>Contact</a>
               </div>
@@ -33,9 +33,9 @@ const Footer = () => {
             <div className='flex flex-col gap-5 text-center lg:text-left'>
               <h3 className='text-[#222] font-semibold'>Product</h3>
               <div className='flex flex-col gap-2 font-medium'>
-                <a href='/' className='hover:text-[#424250]'>Courses</a>
-                <a href='/' className='hover:text-[#424250]'>Pricing</a>
-                <a href='/' className='hover:text-[#424250]'>Blog</a>
+                <a href='/courses' className='hover:text-[#424250]'>Courses</a>
+                <a href='/pricing' className='hover:text-[#424250]'>Pricing</a>
+                <a href='/blogs' className='hover:text-[#424250]'>Blog</a>
               </div>
             </div>
             <div className='flex flex-col gap-5 text-center lg:text-left'>

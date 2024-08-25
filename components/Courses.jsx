@@ -53,8 +53,8 @@ const CourseItem = ({ img, language, text, isExpanded, onToggle }) => (
   <div className="flex flex-col gap-3">
     <div className="flex items-center justify-between cursor-pointer" onClick={onToggle}>
       <div className="flex items-center gap-3">
-        <h3 className="text-[#222] text-2xl font-medium">{language}</h3>
-        <Image src={img} width={25} height={25} alt={`Flag of ${language}`} />
+        <h3 className="text-[#222] md:text-2xl font-medium text-xl">{language}</h3>
+        <Image src={img} width={25} height={25} alt={`Flag of ${language}`} className='w-[20px] h-[20px] md:w-[25px] md:h-[25px]'/>
       </div>
       {isExpanded ? <FaChevronUp /> : <FaChevronDown />}
     </div>
@@ -73,7 +73,7 @@ const Courses = () => {
 
   return (
     <div>
-      <div className="px-3 bg-[#fff5f1] rounded-3xl">
+      <div className="px-1 bg-[#fff5f1] rounded-3xl">
         <Nav />
         <h3 className="text-[#222] text-4xl font-medium md:text-5xl pt-10 pb-5 lg:flex justify-center items-center hidden">
           Courses Offered
