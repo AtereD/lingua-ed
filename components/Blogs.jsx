@@ -5,24 +5,24 @@ import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa6";
 const blogsData = [
   {
     title: "5 Proven Strategies to Boost Your Language Learning Efficiency",
-    date: "Published on August 20, 2024 by Anna Smith",
+    date: "Published on February 12, 2024 by Anna Smith",
     text: "Learning a new language can be challenging, but with the right strategies, you can maximize your progress. Discover five effective methods to enhance your language learning experience and achieve fluency faster.",
     linkText: "Read More",
-    linkUrl: "/",
+    linkUrl: "https://successstories54.wordpress.com/2024/08/25/5-proven-strategies-to-boost-your-language-learning-efficiency/",
   },
   {
     title: "How Technology is Transforming Language Education in 2024",
-    date: "Published on August 10, 2024 David Lee",
+    date: "Published on April 11, 2024 David Lee",
     text: "From AI-driven language apps to immersive virtual reality experiences, technology is revolutionizing the way we learn languages. Explore the latest innovations and how they are shaping the future of education.",
     linkText: "Read More",
-    linkUrl: "/",
+    linkUrl: "https://successstories54.wordpress.com/2024/08/25/how-technology-is-transforming-language-education-in-2024/",
   },
   {
     title: "Success Stories: How Our Users Achieved Fluency and Beyond",
     date: "Published on July 15, 2024 by LinguaEd Team",
     text: "Be inspired by real-life success stories from LinguaEd users who have achieved remarkable fluency and personal growth through our platform. Learn about their journeys and the strategies that helped them succeed.",
     linkText: "Read More",
-    linkUrl: "/",
+    linkUrl: "https://successstories54.wordpress.com/2024/08/25/success-stories-how-our-users-achieved-fluency-and-beyond/",
   },
 ];
 
@@ -67,7 +67,7 @@ const Blogs = () => {
 
                     <a
                       href={blog.linkUrl}
-                      className="pb-5 font-medium text-blue-500 cursor-pointer hover:underline"
+                      className="pb-5 font-medium text-blue-500 cursor-pointer hover:underline" target='_blank'
                     >
                       {blog.linkText}
                     </a>

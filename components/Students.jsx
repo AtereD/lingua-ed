@@ -21,7 +21,7 @@ const testimonialsData = [
     name: " Jane Doe",
     course: "B3 course student",
     logo: "/assets/English.png",
-    review: "Thanks to Lingua, my journey in learning English has been incredibly rewarding. The platform has transformed what started as a casual interest into one of my greatest passions. I can&#39;t imagine making such strides without it!",
+    review: "Thanks to Lingua, my journey in learning English has been incredibly rewarding. The platform has transformed what started as a casual interest into one of my greatest passions. I can't imagine making such strides without it!",
   },
   {
     imageURL: "/assets/english-teacher.png",

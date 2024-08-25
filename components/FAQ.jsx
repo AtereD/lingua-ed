@@ -36,7 +36,7 @@ const faqdata =[
   {
     value:'item-5',
     question: "What resources are included in the courses?",
-    answer: "Our courses include a variety of resources such as video lessons, interactive exercises, quizzes, and downloadable materials. Additionally, you&#39;ll have access to practice activities and language labs to enhance your learning experience."
+    answer: "Our courses include a variety of resources such as video lessons, interactive exercises, quizzes, and downloadable materials. Additionally, you'll have access to practice activities and language labs to enhance your learning experience."
   },
   {
     value:'item-6',
