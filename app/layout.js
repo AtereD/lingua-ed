@@ -11,7 +11,6 @@ const quicksand = Quicksand({
 export const metadata = {
   title: "LinguaEd",
   description: "LinguaEd built with Next.js",
-  keywords:"Edtech, Learning, Foreign Languages, Online class",
 };
 
 export default function RootLayout({ children }) {
@@ -21,7 +20,6 @@ export default function RootLayout({ children }) {
       <link href='/icon.png' rel='icon' />
       </head>  
       <body className={`${quicksand.className}`}>
-
         {children}
         <Footer/>
       </body>

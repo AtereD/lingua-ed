@@ -27,7 +27,7 @@ const Footer = () => {
                 <a href='/careers' className='hover:text-[#424250]'>Careers</a>
                 <a href='/#teachers' className='hover:text-[#424250]'>Teachers</a>
                 <a href='/' className='hover:text-[#424250]'>Support</a>
-                <a href='/' className='hover:text-[#424250]'>Contact</a>
+                <a href='/contact' className='hover:text-[#424250]'>Contact</a>
               </div>
             </div>
             <div className='flex flex-col gap-5 text-center lg:text-left'>

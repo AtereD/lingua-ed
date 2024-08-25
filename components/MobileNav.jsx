@@ -66,16 +66,19 @@ const MobileNav = () => {
                   <li className="text-[14px] hover:scale-95 duration-300 ">
                     <a href="/blogs">Blog</a>
                   </li>
+                  <li className="text-[14px] hover:scale-95 duration-300 ">
+                    <a href="/contact">Contact</a>
+                  </li>
                 </ul>
               </div>
               <div className='text-[#666680] flex gap-5'>
-                <a href='/instagram.com'>
+                <a href='https://instagram.com'>
                   <FaInstagram/>
                 </a>
-                <a href='/facebook.com'>
+                <a href='https://facebook.com'>
                   <FaFacebook/>
                 </a>
-                <a href='/twitter.com'>
+                <a href='https://twitter.com'>
                   <FaTwitter/>
                 </a>
               </div>

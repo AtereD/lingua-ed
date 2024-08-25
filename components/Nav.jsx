@@ -26,6 +26,8 @@ const Nav = () => {
               Careers</a></li>
               <li className='duration-300 hover:scale-95 text-[14px] xl:text-[18px] '><a href="/blogs">
               Blog</a></li>
+              <li className='duration-300 hover:scale-95 text-[14px] xl:text-[18px] '><a href="/contact">
+              Contact</a></li>
           </ul>
         </div>
           <a href='/pricing'>
