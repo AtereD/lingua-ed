@@ -7,6 +7,24 @@ const quicksand = Quicksand({
   weight: ["300", "400", "500", "600", "700"],
 });
 
+const data =[
+  {
+    img:'/assets/play.png',
+    title: 'Speaking clubs',
+    text:'In our school you will practice your speaking skills and just get a lot of positive emotions!'
+  },
+  {
+    img:'/assets/send.png',
+    title: 'Quality control',
+    text:'A huge work has been done with the teachers and their work has been monitored thoroughly.'
+  },
+  {
+    img:'/assets/document.png',
+    title: 'Progress analysis',
+    text:'The CEF of Reference has been used at our school. It allows to control our students success in studying.'
+  },
+]
+
 const WhyChooseUs = () => {
   return (
     <section className={`px-1 md:px-5 lg:px-14 py-24`}>
@@ -17,27 +35,17 @@ const WhyChooseUs = () => {
             <h2 className={`${quicksand.className} text-[#222] text-4xl font-medium md:text-5xl`}>Our values</h2>
           </div>
           <div className='grid items-center justify-center w-full grid-cols-1 gap-5 lg:grid-cols-3'>
-            <div className='flex flex-col items-center w-full gap-6 p-4 text-center'>
-              <Image src={"/assets/play.png"} width={70} height={70} alt="icon"/>
-              <div className='flex flex-col gap-1'>
-                <h3 className={`${quicksand.className} text-[#222] text-[20px] font-semibold`}>Speaking clubs</h3>
-                <p className='text-[18px] md:max-w-[400px]'>In our school you will practice your speaking skills and just get a lot of positive emotions!</p>
+            {data.map((item, index) => (
+              <div key={index}>
+              <div className='flex flex-col items-center w-full gap-6 p-4 text-center'>
+                <Image src={item.img} width={70} height={70} alt="icon"/>
+                <div className='flex flex-col gap-1'>
+                  <h3 className={`${quicksand.className} text-[#222] text-[20px] font-semibold`}>{item.title}</h3>
+                  <p className='text-[18px] md:max-w-[400px]'>{item.text}</p>
+                </div>
               </div>
-            </div>
-            <div className='flex flex-col items-center w-full gap-6 p-4 text-center'>
-              <Image src={"/assets/send.png"} width={70} height={70} alt="icon"/>
-              <div className='flex flex-col gap-1'>
-                <h3 className={`${quicksand.className} text-[#222] text-[20px] font-semibold`}>Speaking clubs</h3>
-                <p className='text-[18px] md:max-w-[400px]'>In our school you will practice your speaking skills and just get a lot of positive emotions!</p>
               </div>
-            </div>
-            <div className='flex flex-col items-center w-full gap-6 p-4 text-center'>
-              <Image src={"/assets/document.png"} width={70} height={70} alt="icon"/>
-              <div className='flex flex-col gap-1'>
-                <h3 className={`${quicksand.className} text-[#222] text-[20px] font-semibold`}>Speaking clubs</h3>
-                <p className='text-[18px] md:max-w-[400px]'>In our school you will practice your speaking skills and just get a lot of positive emotions!</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

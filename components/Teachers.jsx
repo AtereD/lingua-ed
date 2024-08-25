@@ -13,8 +13,8 @@ const quicksand = Quicksand({
 const teachersData = [
   { name: 'Christian Howard', imgUrl: '/assets/italian-teacher.png', flag: '/assets/Italy.png', subject: 'Italian teacher' },
   { name: 'Sandra Wilson', imgUrl: '/assets/spanish-teacher.png', flag: '/assets/spanish.png', subject: 'Spanish teacher' },
-  { name: 'Jimmy Cooper', imgUrl: '/assets/english-teacher.png', flag: '/assets/English.png', subject: 'English teacher' },
-  { name: 'Eun-Ji', imgUrl: '/assets/korea-teacher.jpg', flag: '/assets/south-Korea.png', subject: 'Korean teacher' },
+  { name: 'Benedict Eitel', imgUrl: '/assets/english-teacher.png', flag: '/assets/English.png', subject: 'English teacher' },
+  { name: 'Eun-Ji', imgUrl: '/assets/korea-teacher.jpg', flag: '/assets/south-korea.png', subject: 'Korean teacher' },
   { name: 'Benedict Eitel', imgUrl: '/assets/english-teacher.png', flag: '/assets/germany.png', subject: 'German teacher' }
 ];
 
