@@ -1,5 +1,6 @@
 import React from 'react'
 import Nav from './Nav'
+import Footer from './Footer'
 
 const Pricing = () => {
   return (
@@ -29,7 +30,9 @@ const Pricing = () => {
                     <li className=''>Monthly progress reports</li>
                 </ul>
                 <div>
-                <button className='bg-[#524fd5] w-[148px] h-[52px] text-white flex items-center text-center justify-center rounded-full font-medium hover:scale-95 duration-300 ease-in-out hover:transition-colors'>Sign Up Now</button>
+                    <a href="/sign-up">
+                    <button className='bg-[#524fd5] w-[148px] h-[52px] text-white flex items-center text-center justify-center rounded-full font-medium hover:scale-95 duration-300 ease-in-out hover:transition-colors'>Sign Up Now</button> 
+                    </a>
                 </div>
             </div>
             
@@ -49,7 +52,9 @@ const Pricing = () => {
                     <li className=''>Personalized learning plan and career counseling</li>
                 </ul>
                 <div>
-                <button className='bg-[#524fd5] w-[148px] h-[52px] text-white flex items-center text-center justify-center rounded-full font-medium hover:scale-95 duration-300 ease-in-out hover:transition-colors'>Sign Up Now</button>
+                    <a href='/sign-up'>
+                    <button className='bg-[#524fd5] w-[148px] h-[52px] text-white flex items-center text-center justify-center rounded-full font-medium hover:scale-95 duration-300 ease-in-out hover:transition-colors'>Sign Up Now</button> 
+                    </a>
                 </div>
             </div>
             <div className='p-4  flex flex-col items-center justify-center border border-[#524fd5]  rounded-[50px] gap-10 md:w-[400px] w-[300px] lg:w-[350px] mt-[50px]'>
@@ -67,11 +72,15 @@ const Pricing = () => {
                     <li className=''>Exclusive webinars and workshops</li>
                 </ul>
                 <div>
-                <button className='bg-[#524fd5] w-[148px] h-[52px] text-white flex items-center text-center justify-center rounded-full font-medium hover:scale-95 duration-300 ease-in-out hover:transition-colors'>Sign Up Now</button>
+                    <a href='/sign-up'>
+                    <button className='bg-[#524fd5] w-[148px] h-[52px] text-white flex items-center text-center justify-center rounded-full font-medium hover:scale-95 duration-300 ease-in-out hover:transition-colors'>Sign Up Now</button>  
+                    </a>
                 </div>
             </div>
         </div>
       </div>
+
+      <Footer/>
     </div>
   )
 }

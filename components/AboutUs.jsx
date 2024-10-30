@@ -1,6 +1,7 @@
 import React from "react";
 import Nav from "./Nav";
 import Image from "next/image";
+import Footer from "./Footer";
 
 const AboutUs = () => {
   return (
@@ -57,6 +58,7 @@ const AboutUs = () => {
         </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

@@ -5,6 +5,7 @@ import TrialSubscription from "@/components/TrialSubscription";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Image from "next/image";
 import Teachers from "@/components/Teachers";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -15,6 +16,8 @@ export default function Home() {
       <Students/>
       <FAQ/>
       <TrialSubscription/>
+      <Footer/>
     </main>
+    
   );
 }

@@ -1,6 +1,7 @@
 // Career.js
 import React from 'react';
 import Nav from './Nav';
+import Footer from './Footer';
 
 // Define job data
 const jobListings = [
@@ -121,6 +122,8 @@ const Career = () => {
 
         <hr className='py-5 border-gray-300'/>
       </main>
+
+      <Footer/>
     </div>
   );
 }
