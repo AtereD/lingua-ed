@@ -67,7 +67,7 @@ const SignIn = () => {
 
   return (
     <div className="h-full">
-      <div className="px-1 py-5 lg:py-0">
+      <div className="px-3 py-5 lg:py-0">
         <ToastContainer />
         <div className="flex items-center justify-between">
           <div>

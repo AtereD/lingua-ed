@@ -123,7 +123,7 @@ const SignUp = () => {
       };
   return (
     <div className="h-full">
-      <div className="px-1 py-5 lg:py-0">
+      <div className="px-3 py-5 lg:py-0">
         <div className="flex items-center justify-between">
           <div>
             <Image src="/logo.png" width={110} height={35} alt="Lingua Logo" />
@@ -219,7 +219,7 @@ const SignUp = () => {
             {isSubmitting ? <Spinner /> : "Sign Up"}
           </button>
 
-          <hr className="border-gray-300" />
+          <hr className="w-full border-gray-300" />
 
           <p className="mt-4">
             Have an account already?{" "}
