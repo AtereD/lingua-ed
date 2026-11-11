@@ -1,92 +1,77 @@
 "use client";
 
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import { FaBars, FaFacebook, FaInstagram, FaTwitter, FaX } from "react-icons/fa6";
+import Link from "next/link";
+import { FaBars, FaFacebook, FaInstagram, FaTwitter, FaXmark } from "react-icons/fa6";
+import { NAV_LINKS } from "@/lib/nav";
 
 const MobileNav = () => {
-  const [nav, setNav] = useState(false);
+  const [open, setOpen] = useState(false);
 
-  const handleNav = () => {
-    setNav(!nav);
-  };
+  // Close on Escape and lock page scroll while the menu is open.
+  useEffect(() => {
+    if (!open) return undefined;
+    const onKey = (e) => e.key === "Escape" && setOpen(false);
+    document.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [open]);
 
   return (
-    <nav>
+    <div>
       <div className="flex items-center justify-between p-4">
-        <div>
-          <Image src={"/logo.png"} width={90} height={35} alt="Logo" />
-        </div>
+        <Link href="/" aria-label="LinguaEd home">
+          <Image src="/logo.png" width={90} height={35} alt="LinguaEd logo" priority />
+        </Link>
         <div className="text-[#666680] flex items-center gap-4">
-          <a href='/pricing'>
-          <button className="text-[#524fd5] w-[128px] h-[40px] bg-white flex items-center text-center justify-center rounded-full font-medium hover:scale-95 duration-300 ease-in-out hover:transition-colors">
+          <Link
+            href="/pricing"
+            className="text-[#524fd5] w-[128px] h-[40px] bg-white flex items-center justify-center rounded-full font-medium hover:scale-95 duration-300 ease-in-out"
+          >
             Get started
-          </button></a>
-          <FaBars className="w-5 h-5" onClick={handleNav} />
+          </Link>
+          <button type="button" aria-label="Open menu" aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen(true)} className="p-2">
+            <FaBars className="w-5 h-5" aria-hidden />
+          </button>
         </div>
       </div>
 
-      <div
-        className={
-          nav ? "lg:hidden fixed top-0 left-0 w-full h-screen bg-black/60" : ""
-        }
-      >
-        <div
-          className={
-            nav
-              ? "lg:hidden fixed top-0 w-[100%] md:h-[50%] p-10 ease-in duration-500 overflow-y-auto bg-[#fff] "
-              : "fixed top-[-500%] left-0 right-0 p-10 ease-in duration-500 "
-          }
-        >
-          <div className="flex flex-col gap-5 md:space-y-10">
-            <div className="flex items-center justify-between w-full">
-              <div>
-                <Image src={"/logo.png"} width={90} height={35} alt="Logo" />
-              </div>
-              <FaX className="w-4 h-4 text-[#666680]" onClick={handleNav} />
+      {open && (
+        <div className="fixed inset-0 z-50 bg-black/60" onClick={() => setOpen(false)}>
+          <div
+            id="mobile-menu"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Menu"
+            className="w-full max-h-screen p-8 overflow-y-auto bg-white"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between">
+              <Image src="/logo.png" width={90} height={35} alt="LinguaEd logo" />
+              <button type="button" aria-label="Close menu" onClick={() => setOpen(false)} className="p-2">
+                <FaXmark className="w-5 h-5 text-[#666680]" aria-hidden />
+              </button>
             </div>
-            <div className='flex flex-col items-center gap-6'>
-              <div>
-                <ul className="text-[#666680] flex items-center gap-3 transition-colors flex-col md:gap-5">
-                <li className="text-[14px] hover:scale-95 duration-300 ">
-                    <a href="/">Home</a>
-                  </li>
-                  <li className="text-[14px] hover:scale-95 duration-300 ">
-                    <a href="/courses">Courses</a>
-                  </li>
-                  <li className="text-[14px] hover:scale-95 duration-300 ">
-                    <a href="/about-us">About us</a>
-                  </li>
-                  <li className="text-[14px] hover:scale-95 duration-300 ">
-                    <a href="/pricing">Pricing</a>
-                  </li>
-                  <li className="text-[14px] hover:scale-95 duration-300 ">
-                    <a href="/careers">Careers</a>
-                  </li>
-                  <li className="text-[14px] hover:scale-95 duration-300 ">
-                    <a href="/blogs">Blog</a>
-                  </li>
-                  <li className="text-[14px] hover:scale-95 duration-300 ">
-                    <a href="/contact">Contact</a>
-                  </li>
-                </ul>
-              </div>
-              <div className='text-[#666680] flex gap-5'>
-                <a href='https://instagram.com'>
-                  <FaInstagram/>
-                </a>
-                <a href='https://facebook.com'>
-                  <FaFacebook/>
-                </a>
-                <a href='https://twitter.com'>
-                  <FaTwitter/>
-                </a>
-              </div>
+            <ul className="text-[#666680] flex flex-col items-center gap-5 mt-8 text-lg">
+              {[...NAV_LINKS, { href: "/sign-in", label: "Sign in" }].map(({ href, label }) => (
+                <li key={href}>
+                  <Link href={href} onClick={() => setOpen(false)}>{label}</Link>
+                </li>
+              ))}
+            </ul>
+            <div className="text-[#666680] flex justify-center gap-5 mt-8">
+              <a href="https://instagram.com" aria-label="Instagram"><FaInstagram /></a>
+              <a href="https://facebook.com" aria-label="Facebook"><FaFacebook /></a>
+              <a href="https://twitter.com" aria-label="Twitter"><FaTwitter /></a>
             </div>
           </div>
         </div>
-      </div>
-    </nav>
+      )}
+    </div>
   );
 };
 

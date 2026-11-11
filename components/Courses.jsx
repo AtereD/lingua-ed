@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState } from "react";
+import Link from 'next/link'
 import Footer from "./Footer";
 import Nav from "./Nav";
 import Image from "next/image";
@@ -51,13 +52,20 @@ const coursesData = [
 
 const CourseItem = ({ img, language, text, isExpanded, onToggle }) => (
   <div className="flex flex-col gap-3">
-    <div className="flex items-center justify-between cursor-pointer" onClick={onToggle}>
-      <div className="flex items-center gap-3">
-        <h3 className="text-[#222] md:text-2xl font-medium text-xl">{language}</h3>
-        <Image src={img} width={25} height={25} alt={`Flag of ${language}`} className='w-[20px] h-[20px] md:w-[25px] md:h-[25px]'/>
-      </div>
-      {isExpanded ? <FaChevronUp /> : <FaChevronDown />}
-    </div>
+    <h3>
+      <button
+        type="button"
+        onClick={onToggle}
+        aria-expanded={isExpanded}
+        className="flex items-center justify-between w-full text-left"
+      >
+        <span className="flex items-center gap-3">
+          <span className="text-[#222] md:text-2xl font-medium text-xl">{language}</span>
+          <Image src={img} width={25} height={25} alt={`Flag of ${language}`} className='w-[20px] h-[20px] md:w-[25px] md:h-[25px]'/>
+        </span>
+        {isExpanded ? <FaChevronUp aria-hidden /> : <FaChevronDown aria-hidden />}
+      </button>
+    </h3>
     {isExpanded && (
       <p className="font-medium ">{text}</p>
     )}
@@ -97,11 +105,7 @@ const Courses = () => {
             ))}
           </div>
           <div>
-            <a href="/pricing">
-              <button className="bg-[#524fd5] w-[171px] h-[64px] text-white flex items-center justify-center rounded-full font-medium hover:scale-95 transition-transform duration-300 ease-in-out">
-                Get started
-              </button>
-            </a>
+            <Link href="/pricing" className="bg-[#524fd5] w-[171px] h-[64px] text-white flex items-center justify-center rounded-full font-medium hover:scale-95 transition-transform duration-300 ease-in-out">Get started</Link>
           </div>
         </div>
       </div>

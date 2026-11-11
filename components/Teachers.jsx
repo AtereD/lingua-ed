@@ -1,21 +1,17 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
-import { Quicksand } from 'next/font/google';
+import { quicksand } from "@/lib/fonts";
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import Image from 'next/image';
 
-const quicksand = Quicksand({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-});
 
 const teachersData = [
   { name: 'Christian Howard', imgUrl: '/assets/italian-teacher.png', flag: '/assets/Italy.png', subject: 'Italian teacher' },
   { name: 'Sandra Wilson', imgUrl: '/assets/spanish-teacher.png', flag: '/assets/spanish.png', subject: 'Spanish teacher' },
   { name: 'Benedict Eitel', imgUrl: '/assets/english-teacher.png', flag: '/assets/English.png', subject: 'English teacher' },
   { name: 'Eun-Ji', imgUrl: '/assets/korea-teacher.jpg', flag: '/assets/south-korea.png', subject: 'Korean teacher' },
-  { name: 'Benedict Eitel', imgUrl: '/assets/english-teacher.png', flag: '/assets/germany.png', subject: 'German teacher' }
+  { name: 'Lukas Becker', imgUrl: '/assets/german-teacher.jpg', flag: '/assets/germany.png', subject: 'German teacher' }
 ];
 
 const Teachers = () => {
@@ -59,13 +55,13 @@ const Teachers = () => {
               <h2 className={`${quicksand.className} text-[#222] text-4xl font-medium md:text-5xl`}>Meet our teachers</h2>
               <div className="flex justify-center gap-1">
                 <button 
-                  onClick={handlePrevClick}
+                  aria-label="Previous teachers" onClick={handlePrevClick}
                   className="w-[56px] h-[56px] border flex items-center rounded-full justify-center text-[#e8e8f6] border-[#e8e8f6]"
                 >
                   <FaChevronLeft className="w-4 h-4" />
                 </button>
                 <button 
-                  onClick={handleNextClick}
+                  aria-label="Next teachers" onClick={handleNextClick}
                   className="w-[56px] h-[56px] border flex items-center rounded-full justify-center bg-[#524fd5] text-white"
                 >
                   <FaChevronRight className="w-4 h-4" />
@@ -75,8 +71,8 @@ const Teachers = () => {
           </div>
           <div className={`grid ${itemsPerPage === 1 ? 'grid-cols-1' : 'grid-cols-1 lg:grid-cols-3'} gap-5 justify-items-center`}>
             {currentTeachers.map((teacher, index) => (
-              <div key={index} className="flex flex-col gap-3 p-2">
-                <Image src={teacher.imgUrl} width={606} height={457} alt={`${teacher.name}'s image`} className={` lg:h-[350px] md:w-[350px] h-[320px] rounded-3xl md:h-[380px] w-[300px] 2xl:w-[380px] 2xl:h-[400px]`} />
+              <div key={teacher.name} className="flex flex-col gap-3 p-2">
+                <Image src={teacher.imgUrl} width={606} height={457} alt={`Portrait of ${teacher.name}`} className={` lg:h-[350px] md:w-[350px] h-[320px] rounded-3xl md:h-[380px] w-[300px] 2xl:w-[380px] 2xl:h-[400px]`} />
                 <div className="flex flex-col gap-3">
                   <h3 className="text-[20px] text-[#222] font-medium">{teacher.name}</h3>
                   <div className="flex items-center gap-1">

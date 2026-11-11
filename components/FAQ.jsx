@@ -1,5 +1,5 @@
 import React from "react";
-import { Quicksand } from "next/font/google";
+import { quicksand } from "@/lib/fonts";
 import {
   Accordion,
   AccordionContent,
@@ -7,10 +7,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const quicksand = Quicksand({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-});
 
 const faqdata =[
   {

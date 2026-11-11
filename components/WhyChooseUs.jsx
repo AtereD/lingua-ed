@@ -1,11 +1,7 @@
 import React from 'react'
-import { Quicksand } from "next/font/google";
+import { quicksand } from "@/lib/fonts";
 import Image from 'next/image';
 
-const quicksand = Quicksand({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-});
 
 const data =[
   {

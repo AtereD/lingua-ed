@@ -1,47 +1,38 @@
-import Image from 'next/image'
-import React from 'react'
-import MobileNav from './MobileNav'
+import Image from "next/image";
+import Link from "next/link";
+import MobileNav from "./MobileNav";
+import { NAV_LINKS } from "@/lib/nav";
 
-const Nav = () => {
-  return (
-    <nav>
-
-      {/* Desktop */}
-      
-      <div className='items-center justify-between hidden py-4 lg:flex'>
-        <div>
-          <Image src={"/logo.png"} width={110} height={35} alt="Logo"/>
-        </div>
-        <div>
-          <ul className="text-[#666680] flex items-center gap-6 transition-colors font-medium">
-          <li className='duration-300 hover:scale-95 text-[14px] xl:text-[18px] '><a href="/">
-              Home</a></li>
-            <li className='duration-300 hover:scale-95 text-[14px] xl:text-[18px] '><a href="/courses">
-              Courses</a></li>
-              <li className='duration-300 hover:scale-95 text-[14px] xl:text-[18px] '><a href="/about-us">
-              About us</a></li>
-              <li className='duration-300 hover:scale-95 text-[14px] xl:text-[18px] '><a href="/pricing">
-              Pricing</a></li>
-              <li className='duration-300 hover:scale-95 text-[14px] xl:text-[18px] '><a href="/careers">
-              Careers</a></li>
-              <li className='duration-300 hover:scale-95 text-[14px] xl:text-[18px] '><a href="/blogs">
-              Blog</a></li>
-              <li className='duration-300 hover:scale-95 text-[14px] xl:text-[18px] '><a href="/contact">
-              Contact</a></li>
-          </ul>
-        </div>
-          <a href='/pricing'>
-          <button className='text-[#524fd5] w-[148px] h-[52px] bg-white flex items-center text-center justify-center rounded-full font-medium hover:scale-95 duration-300 ease-in-out hover:transition-colors'>Get started</button>
-          </a>
+const Nav = () => (
+  <nav aria-label="Main">
+    {/* Desktop */}
+    <div className="items-center justify-between hidden py-4 lg:flex">
+      <Link href="/" aria-label="LinguaEd home">
+        <Image src="/logo.png" width={110} height={35} alt="LinguaEd logo" priority />
+      </Link>
+      <ul className="text-[#666680] flex items-center gap-6 font-medium">
+        {NAV_LINKS.map(({ href, label }) => (
+          <li key={href} className="duration-300 hover:scale-95 text-[14px] xl:text-[18px]">
+            <Link href={href}>{label}</Link>
+          </li>
+        ))}
+      </ul>
+      <div className="flex items-center gap-4">
+        <Link href="/sign-in" className="font-medium text-[#524fd5] hover:underline">Sign in</Link>
+        <Link
+          href="/pricing"
+          className="text-[#524fd5] w-[148px] h-[52px] bg-white flex items-center justify-center rounded-full font-medium hover:scale-95 duration-300 ease-in-out"
+        >
+          Get started
+        </Link>
       </div>
-      
-      {/* Mobile */}
-      
-      <div className='lg:hidden'>
-        <MobileNav />
-      </div>
-    </nav>
-  )
-}
+    </div>
 
-export default Nav
+    {/* Mobile */}
+    <div className="lg:hidden">
+      <MobileNav />
+    </div>
+  </nav>
+);
+
+export default Nav;

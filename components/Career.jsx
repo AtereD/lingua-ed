@@ -58,7 +58,7 @@ const Career = () => {
             Careers at Lingua
           </h3>
           <p className='text-[#222] pb-5 font-medium pt-3'>
-            At Lingua, we're passionate about making language learning accessible and engaging for everyone. Our mission is to empower learners around the globe with innovative tools and exceptional resources. Join us and become part of a dedicated team working to shape the future of language education!
+            At Lingua, we&apos;re passionate about making language learning accessible and engaging for everyone. Our mission is to empower learners around the globe with innovative tools and exceptional resources. Join us and become part of a dedicated team working to shape the future of language education!
           </p>
         </section>
         

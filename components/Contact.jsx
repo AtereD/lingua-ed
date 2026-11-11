@@ -8,12 +8,30 @@ const Contact = () => {
     const [email, setEmail] = useState('')
     const [subject, setSubject] = useState('')
     const [message, setMessage] = useState('')
+    const [status, setStatus] = useState('idle') // idle | sending | sent | error
+    const [errors, setErrors] = useState({})
 
-    // Handle form submission
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    
-    console.log('Form submitted', { fullName, email, subject, message });
+    setStatus('sending');
+    setErrors({});
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: fullName, email, subject, message }),
+      });
+      const data = await res.json();
+      if (res.status === 422) {
+        setErrors(data.errors || {});
+        return setStatus('idle');
+      }
+      if (!res.ok) throw new Error('Request failed');
+      setFullName(''); setEmail(''); setSubject(''); setMessage('');
+      setStatus('sent');
+    } catch {
+      setStatus('error');
+    }
   };
     
   return (
@@ -77,7 +95,7 @@ const Contact = () => {
                 </li>
             </ul>
             
-            <form className='flex flex-col items-center justify-center w-full gap-5 mb-10 lg:flex-row' >
+            <form className='flex flex-col items-center justify-center w-full gap-5 mb-10 lg:flex-row' onSubmit={handleSubmit} noValidate>
                 <div className='w-full lg:w-1/2'>
                 <h4 className='mt-5 text-2xl font-medium'>Contact Form</h4>
                 <p className='lg:max-w-[400px]'>Alternatively, you can fill out the contact form below and we&#39;ll get back to you as soon as possible:</p>
@@ -88,41 +106,50 @@ const Contact = () => {
                 <div className='flex flex-col w-full gap-2 p-10 mt-5 border lg:w-1/2'>
                 <label htmlFor='name'>Name&#58;</label>
                 <input
-                  id='name'
+                  id='name' aria-invalid={Boolean(errors.name)} aria-describedby={errors.name ? 'name-error' : undefined}
                   type='text'
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
                   className='p-2 border-b border-gray-300 rounded '
                 />
+                {errors.name && <p id='name-error' role='alert' className='text-sm text-red-600'>{errors.name}</p>}
 
                 <label htmlFor='email'>Email&#58;</label>
                 <input
-                  id='email'
+                  id='email' aria-invalid={Boolean(errors.email)} aria-describedby={errors.email ? 'email-error' : undefined}
                   type='email'
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className='p-2 border-b border-gray-300 rounded'
                 />
+                {errors.email && <p id='email-error' role='alert' className='text-sm text-red-600'>{errors.email}</p>}
 
                 <label htmlFor='subject'>Subject&#58;</label>
                 <input
-                  id='subject'
+                  id='subject' aria-invalid={Boolean(errors.subject)} aria-describedby={errors.subject ? 'subject-error' : undefined}
                   type='text'
                   value={subject}
                   onChange={(e) => setSubject(e.target.value)}
                   className='p-2 border-b border-gray-300 rounded'
                 />
+                {errors.subject && <p id='subject-error' role='alert' className='text-sm text-red-600'>{errors.subject}</p>}
 
                 <label htmlFor='message'>Message&#58;</label>
                 <textarea
-                  id='message'
+                  rows={5}
+                  id='message' aria-invalid={Boolean(errors.message)} aria-describedby={errors.message ? 'message-error' : undefined}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   className='p-2 border-b border-gray-300 rounded'
                 />
-                <button type='submit' className='p-2 mt-10 text-white duration-300 ease-out bg-blue-600 rounded hover:scale-95' onSubmit={handleSubmit}>
-                Send
+                {errors.message && <p id='message-error' role='alert' className='text-sm text-red-600'>{errors.message}</p>}
+                <button type='submit' disabled={status === 'sending'} className='p-2 mt-10 text-white duration-300 ease-out bg-[#524fd5] rounded hover:scale-95 disabled:opacity-60'>
+                {status === 'sending' ? 'Sending…' : 'Send'}
               </button>
+              <p role='status' className={`text-sm ${status === 'error' ? 'text-red-600' : 'text-[#18a058]'}`}>
+                {status === 'sent' && "Thanks! Your message is on its way — we'll reply soon."}
+                {status === 'error' && 'Something went wrong. Please try again or email us directly.'}
+              </p>
               </div>
 
              
@@ -133,9 +160,9 @@ const Contact = () => {
             <div className='flex flex-col gap-4'>
             <h4 className='text-2xl font-medium '>Follow Us</h4>
             <div className='flex gap-2 mb-5'>
-                <a href='https://www.facebook.com' className='flex items-center justify-center w-8 h-8 duration-300 ease-out border rounded-full hover:scale-95'><FaFacebook className='w-3 h-3'/></a>
-                <a href='https://www.twitter.com' className='flex items-center justify-center w-8 h-8 duration-300 ease-out border rounded-full hover:scale-95'><FaTwitter className='w-3 h-3'/></a>
-                <a href='https://www.instagram.com' className='flex items-center justify-center w-8 h-8 duration-300 ease-out border rounded-full hover:scale-95'><FaInstagram className='w-3 h-3'/></a>
+                <a href='https://www.facebook.com' aria-label='Facebook' className='flex items-center justify-center w-8 h-8 duration-300 ease-out border rounded-full hover:scale-95'><FaFacebook className='w-3 h-3'/></a>
+                <a href='https://www.twitter.com' aria-label='Twitter' className='flex items-center justify-center w-8 h-8 duration-300 ease-out border rounded-full hover:scale-95'><FaTwitter className='w-3 h-3'/></a>
+                <a href='https://www.instagram.com' aria-label='Instagram' className='flex items-center justify-center w-8 h-8 duration-300 ease-out border rounded-full hover:scale-95'><FaInstagram className='w-3 h-3'/></a>
             </div>
             <p className="text-[#222] pb-5 font-medium pt-3">Thank you for reaching out to LinguaEd. We look forward to assisting you!</p>
             </div>

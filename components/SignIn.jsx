@@ -1,140 +1,117 @@
 "use client";
-import { useState } from "react";
-import Image from "next/image";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { signInWithEmailAndPassword} from "firebase/auth";
-import { auth } from "@/app/firebase";
-import Spinner from "./Spinner";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { authErrorMessage, useAuth } from "@/context/AuthContext";
+import AuthShell from "./AuthShell";
+import Spinner from "./Spinner";
+
+const inputClass =
+  "h-[50px] rounded-3xl w-full px-5 border-[#524fd5] border-[1.5px] focus:outline-none focus:ring-2 focus:ring-[#524fd5]/40";
 
 const SignIn = () => {
   const router = useRouter();
-  
+  const { user, loading, signIn, resetPassword } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  useEffect(() => {
+    if (!loading && user) router.replace("/dashboard");
+  }, [loading, user, router]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     setIsSubmitting(true);
-
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        toast.success("Login successful");
-        router.push("/dashboard");
-        setIsSubmitting(false);
-        // ...
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        let errorMessage = '';
-
-        // Map error codes to user-friendly messages
-        switch (errorCode) {
-            case 'auth/user-not-found':
-                errorMessage = "No account found for this email. Please check your email or sign up.";
-                break;
-            case 'auth/wrong-password':
-                errorMessage = "Incorrect password. Please try again.";
-                break;
-            case 'auth/invalid-email':
-                errorMessage = "Please enter a valid email address.";
-                break;
-            case 'auth/user-disabled':
-                errorMessage = "Your account has been disabled. Please contact support.";
-                break;
-            case 'auth/too-many-requests':
-                errorMessage = "Too many attempts. Please try again later.";
-                break;
-            case 'auth/network-request-failed':
-                errorMessage = "Network error. Please check your connection and try again.";
-                break;
-            default:
-                errorMessage = "An unexpected error occurred. Please try again.";
-                break;
-        }
-        toast.error(errorMessage);
-        setIsSubmitting(false);
-      });
-
+    try {
+      await signIn({ email, password });
+      toast.success("Welcome back!");
+      router.push("/dashboard");
+    } catch (error) {
+      toast.error(authErrorMessage(error.code));
+      setIsSubmitting(false);
+    }
   };
 
-  return (
-    <div className="h-full">
-      <div className="px-3 py-5 lg:py-0">
-        <ToastContainer />
-        <div className="flex items-center justify-between">
-          <div>
-            <Image src="/logo.png" width={110} height={35} alt="Lingua Logo" />
-          </div>
-          <div>
-            <Link href="/" className="font-semibold hover:underline">
-              Home
-            </Link>
-          </div>
-        </div>
-        <h3 className="text-[#222] text-4xl md:text-5xl pt-10 font-medium text-center">
-          Sign In
-        </h3>
-        <p className="text-center text-[20px] mt-3 font-medium">
-          Welcome Back to Lingua 👋
-        </p>
-      </div>
-      <div className="container flex items-center justify-center mx-auto py-14">
-        <form
-          className="flex flex-col items-center justify-center w-full gap-6 px-4 pb-10 border shadow pt-14 rounded-xl lg:max-w-[350px] 2xl:max-w-[400px] md:max-w-[400px] max-w-[350px]"
-          onSubmit={handleSubmit}
-        >
-          <div className="w-full">
-            <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email address"
-              className="h-[50px] rounded-3xl w-full px-5 border-[#524fd5] border-[1.5px]"
-              required
-            />
-          </div>
-          <div className="w-full ">
-            <input
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Enter your password"
-              className="h-[50px]  rounded-3xl w-full px-5 border-[#524fd5] border-[1.5px] "
-              required
-            />
-          </div>
-          <button
-            type="submit"
-            className="bg-[#524fd5] w-[148px] h-[52px] text-white flex items-center text-center justify-center rounded-full font-medium hover:scale-90 duration-300 ease-in-out hover:transition-colors mt-5"
-            disabled={isSubmitting}
-          >
-            {isSubmitting ? <Spinner /> : "Sign In"}
-          </button>
-          <hr className="w-full border-gray-300" />
+  const handleReset = async () => {
+    if (!email) return toast.info("Enter your email above, then press “Forgot password?”.");
+    try {
+      await resetPassword(email);
+      toast.success("Password reset email sent. Check your inbox.");
+    } catch (error) {
+      toast.error(authErrorMessage(error.code));
+    }
+  };
 
-          <p className="mt-4">
-            Don't have an account?{" "}
-            <a
-              href="/sign-up"
-              className="font-medium text-blue-600 hover:underline"
-            >
-              Sign Up
-            </a>{" "}
-            here
-          </p>
-        </form>
-      </div>
-    </div>
+  // const handleDemo = () => {
+  //   signInAsGuest();
+  //   router.push("/dashboard");
+  // };
+
+  return (
+    <AuthShell title="Sign In" subtitle="Welcome back to Lingua 👋">
+      <ToastContainer />
+      <form className="flex flex-col items-center gap-5" onSubmit={handleSubmit} noValidate={false}>
+        <div className="w-full">
+          <label htmlFor="email" className="sr-only">Email address</label>
+          <input
+            type="email"
+            id="email"
+            autoComplete="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email address"
+            className={inputClass}
+            required
+          />
+        </div>
+        <div className="w-full">
+          <label htmlFor="password" className="sr-only">Password</label>
+          <input
+            type="password"
+            id="password"
+            autoComplete="current-password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
+            className={inputClass}
+            required
+          />
+          <button
+            type="button"
+            onClick={handleReset}
+            className="mt-2 ml-2 text-sm font-medium text-[#524fd5] hover:underline"
+          >
+            Forgot password?
+          </button>
+        </div>
+        <button
+          type="submit"
+          className="bg-[#524fd5] w-[148px] h-[52px] text-white flex items-center justify-center rounded-full font-medium hover:scale-95 duration-300 ease-in-out disabled:opacity-70"
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? <Spinner /> : "Sign In"}
+        </button>
+        <div className="flex items-center w-full gap-3 text-sm text-[#9ca3c1]">
+          <hr className="flex-1 border-gray-200" /> or <hr className="flex-1 border-gray-200" />
+        </div>
+        {/* <button
+          type="button"
+          onClick={handleDemo}
+          className="w-full h-[48px] rounded-full border-[1.5px] border-[#524fd5] text-[#524fd5] font-medium hover:bg-[#f2edff] duration-300"
+        >
+          Try the demo (no account)
+        </button> */}
+        <p className="mt-2 text-center">
+          Don&apos;t have an account?{" "}
+          <Link href="/sign-up" className="font-medium text-[#524fd5] hover:underline">
+            Sign up
+          </Link>
+        </p>
+      </form>
+    </AuthShell>
   );
 };
 

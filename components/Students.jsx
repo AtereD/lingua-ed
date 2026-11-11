@@ -1,12 +1,8 @@
 "use client"
 import React, {useState} from "react";
-import { Quicksand } from "next/font/google";
+import { quicksand } from "@/lib/fonts";
 import Image from "next/image";
 
-const quicksand = Quicksand({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-});
 
 const testimonialsData = [
   {
@@ -54,21 +50,24 @@ const Students = () => {
             </h2>
           </div>
           <div className="flex flex-col items-center justify-center lg:flex-row gap-7 lg:justify-start ">
-            <Image src= {testimonialsData[currentIndex].imageURL} width={450} height={400} alt="Student's Image" className={` w-[95px] h-[100px] md:w-[350px] flex item-center rounded-full md:h-[400px] md:flex-none md:rounded-[50px]`}/>
+            <Image src= {testimonialsData[currentIndex].imageURL} width={450} height={400} alt={`Portrait of ${testimonialsData[currentIndex].name}`} className={` w-[95px] h-[100px] md:w-[350px] flex item-center rounded-full md:h-[400px] md:flex-none md:rounded-[50px]`}/>
             <div className='flex flex-col items-center gap-2 md:items-start'>
               <h3 className={`${quicksand.className} font-semibold text-[24px] md:text-[28px] text-[#222]`}> {testimonialsData[currentIndex].name}</h3>
               <div className='flex items-center gap-1'>
-                <Image src= {testimonialsData[currentIndex].logo} width={34} height={34} alt="course logo" className='rounded-3xl'/>
+                <Image src= {testimonialsData[currentIndex].logo} width={34} height={34} alt="" className='rounded-3xl'/>
                 <p> {testimonialsData[currentIndex].course}</p>
               </div>
               <p className='max-w-[500px] 2xl:max-w-[1000px] text-[18px] md:text-[20px] text-center md:text-left text-[#222] font-medium'> {testimonialsData[currentIndex].review}</p>
               <div className='flex gap-1 pt-3'>
                 {testimonialsData.map((_, index) => (
-                  <div
+                  <button
                     key={index}
+                    type="button"
+                    aria-label={`Show testimonial ${index + 1}`}
+                    aria-current={currentIndex === index}
                     className={`w-[10px] h-[10px] rounded-full cursor-pointer ${currentIndex === index ? 'bg-[#524fd5]' : 'bg-[#f2edff]'}`}
                     onClick={() => handlePaginationClick(index)}
-                  ></div>
+                  />
                 ))}
               </div>
             </div>

@@ -1,13 +1,10 @@
 'use client'
 import React from "react";
-import { Quicksand } from "next/font/google";
+import Link from 'next/link'
+import { quicksand } from "@/lib/fonts";
 import Image from "next/image";
 import CountUp from "react-countup";
 
-const quicksand = Quicksand({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-});
 
 const Hero = ({ }) => {
   return (
@@ -26,10 +23,7 @@ const Hero = ({ }) => {
               <br className="hidden lg:block" /> access on mobile and desktop
             </p>
             <div>
-              <a href='/pricing'>
-              <button className="bg-[#524fd5] w-[171px] h-[64px] text-white flex items-center text-center justify-center rounded-full font-medium hover:scale-95 duration-300 ease-in-out hover:transition-colors py-6 px-6">
-                Get started
-              </button></a>
+              <Link href="/pricing" className="bg-[#524fd5] w-[171px] h-[64px] text-white flex items-center text-center justify-center rounded-full font-medium hover:scale-95 duration-300 ease-in-out hover:transition-colors py-6 px-6">Get started</Link>
             </div>
           </div>
 
@@ -39,7 +33,7 @@ const Hero = ({ }) => {
                 src={"/assets/Base.png"}
                 width={450}
                 height={450}
-                alt="Base image"
+                alt=""
                 className='w-[400px] md:w-[450px] md:h-[450px]'
               />
               <div className="absolute top-0 left-0">
@@ -47,7 +41,7 @@ const Hero = ({ }) => {
                   src={"/assets/Image container.png"}
                   width={450}
                   height={450}
-                  alt="Image-container"
+                  alt="Smiling language student"
                   className='w-[400px] md:w-[450px] md:h-[450px]'
                 />
                 <div className="absolute flex items-center md:gap-4 md:h-[70px] md:w-[200px] md:top-[55px] bg-white rounded-3xl px-2 md:py-5 md:left-[-45px] top-[30px] gap-1 left-[-19px] w-[150px] h-[55px] justify-center">
@@ -55,7 +49,7 @@ const Hero = ({ }) => {
                     src={"/assets/Avatar.png"}
                     width={48}
                     height={48}
-                    alt="Avatar"
+                    alt=""
                     className='md:w-[48px] md:h-[48px] w-[30px] h-[30px]'
                   />
                   <div className="flex flex-col gap-1">
@@ -67,7 +61,7 @@ const Hero = ({ }) => {
                 </div>
                 <div className="absolute md:right-[-80px] md:w-[150px] flex p-5 bg-white rounded-3xl flex-col text-center justify-center top-[100px] md:top-[180px] right-[-15px] w-[120px] h-[55px] md:h-auto">
                     <div className="text-[#524fd5] font-semibold md:text-[14px] text-[10px]">
-                  <CountUp end={'10'} delay={0} duration={3} />+ Courses</div>
+                  <CountUp end={10} delay={0} duration={3} />+ Courses</div>
                   
                   <p className="md:text-[10px] text-[8px]">Multiple Categories</p>
                 </div>
@@ -77,8 +71,8 @@ const Hero = ({ }) => {
                       src={"/assets/Images.png"}
                       width={180}
                       height={56}
-                      alt="Image"
-                      className='w-[100px] md:[180px]'
+                      alt="Learners"
+                      className='w-[100px] md:w-[180px]'
                     />
                     <p className="md:text-[10px] text-[8px]">Dedicated students per day</p>
                   </div>
